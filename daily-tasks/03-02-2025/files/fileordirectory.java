@@ -3,7 +3,7 @@ import java.io.File;
 
 public class fileordirectory {
     public static void main(String[] args) {
-        File file = new File("C:\\test"); 
+        File file = new File("src\\example1"); 
 
         if (file.isDirectory()) {
             System.out.println("It is a directory.");

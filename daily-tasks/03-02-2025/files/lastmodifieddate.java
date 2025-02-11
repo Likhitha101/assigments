@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class lastmodifieddate {
     public static void main(String[] args) {
-        File file = new File("C:\\test"); 
+        File file = new File("src\\example.txt"); 
 
         if (file.exists()) {
             long lastModified = file.lastModified();
