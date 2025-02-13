@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1"><br>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2"><br>
+    <button id="first">Multiply</button>
+    <button id="second">Divide</button>
+    <p id="result"></p>
+
+    <script>
+        function multiply() {
+            var x = document.getElementById("num1").value;
+            var y = document.getElementById("num2").value;
+            var result = x * y;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+        function divide() {
+            var x = document.getElementById("num1").value;
+            var y = document.getElementById("num2").value;
+            if (y == 0) {
+                document.getElementById("result").innerHTML = "Cannot divide by zero";
+            } else {
+                var result = x / y;
+                document.getElementById("result").innerHTML = "Result: " + result;
+            }
+        }
+        document.getElementById("first").addEventListener("click", multiply);
+        document.getElementById("second").addEventListener("click", divide);
+    </script>
+</body>
+</html>
