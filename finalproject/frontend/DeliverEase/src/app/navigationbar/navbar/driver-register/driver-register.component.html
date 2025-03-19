@@ -1,0 +1,120 @@
+<div class="register-container">
+  <div class="row align-items-center vh-100">
+    <!-- Left Side (Image and Text) -->
+    <div class="col-md-6 d-none d-md-block text-center">
+      <h2 class="fw-bold">Get your business <br> shipments moving</h2>
+      <img src="assets/delivery-bg.jpeg" alt="Delivery Background" class="img-fluid">
+    </div>
+
+    <!-- Right Side (Form Card) -->
+    <div class="col-md-5">
+      <div class="card shadow-sm p-4">
+        <h3 class="fw-bold text-center">Create your account</h3>
+        <form (submit)="register(); $event.preventDefault()">
+          
+          <!-- Name -->
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input [(ngModel)]="driverData.firstName" name="firstName" type="text" class="form-control" id="firstName" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input [(ngModel)]="driverData.lastName" name="lastName" type="text" class="form-control" id="lastName" required>
+          </div>
+
+          <!-- Email & Phone -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input [(ngModel)]="driverData.email" name="email" type="email" class="form-control" id="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input [(ngModel)]="driverData.phone" name="phone" type="tel" class="form-control" id="phone" required>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input [(ngModel)]="driverData.password" name="password" type="password" class="form-control" id="password" required>
+            <small class="text-muted">
+              ✅ 8+ characters | ✅ Upper & lowercase | ✅ Special character | ✅ One number
+            </small>
+          </div>
+
+          <!-- Vehicle Info -->
+          <div class="mb-3">
+            <label for="vehicleNumber" class="form-label">Vehicle Number</label>
+            <input [(ngModel)]="driverData.vehicleNumber" name="vehicleNumber" type="text" class="form-control" id="vehicleNumber" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="vehicleType" class="form-label">Vehicle Type</label>
+            <select [(ngModel)]="driverData.vehicleType" name="vehicleType" class="form-control" id="vehicleType" required>
+              <option value="" disabled selected>Select vehicle type</option>
+              <option value="car">Car</option>
+              <option value="bike">Bike</option>
+              <option value="truck">Truck</option>
+              <option value="van">Van</option>
+            </select>
+          </div>
+
+          <!-- License & Address -->
+          <div class="mb-3">
+            <label for="licenseNumber" class="form-label">License Number</label>
+            <input [(ngModel)]="driverData.licenseNumber" name="licenseNumber" type="text" class="form-control" id="licenseNumber" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="street" class="form-label">Street</label>
+            <input [(ngModel)]="driverData.street" name="street" type="text" class="form-control" id="street" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input [(ngModel)]="driverData.city" name="city" type="text" class="form-control" id="city" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="state" class="form-label">State</label>
+            <input [(ngModel)]="driverData.state" name="state" type="text" class="form-control" id="state" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input [(ngModel)]="driverData.country" name="country" type="text" class="form-control" id="country" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input [(ngModel)]="driverData.pincode" name="pincode" type="text" class="form-control" id="pincode" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="licensePhotoPath" class="form-label">Upload License Photo</label>
+            <input [(ngModel)]="driverData.licensePhotoPath" name="licensePhotoPath" type="file" class="form-control" id="licensePhotoPath">
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="terms" required>
+            <label class="form-check-label" for="terms">
+              By clicking on **Create Account**, you agree to Delhivery's 
+              <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btn btn-primary w-100" [disabled]="isSubmitting">Create Account</button>
+
+          <!-- Already have an account? -->
+          <div class="text-center mt-3">
+            Already have an account? <a href="/login">Login</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

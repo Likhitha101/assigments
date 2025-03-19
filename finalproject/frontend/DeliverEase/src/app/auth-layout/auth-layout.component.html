@@ -1,0 +1,22 @@
+<!-- auth-layout.component.html -->
+<div class="d-flex">
+    <!-- Sidebar: Always Visible -->
+    <div class="sidebar">
+      <!-- Only one of these ng-container blocks should evaluate to true -->
+      <ng-container *ngIf="userRole === 'CUSTOMER'">
+        <app-customer-navbar></app-customer-navbar>
+      </ng-container>
+      <ng-container *ngIf="userRole === 'DRIVER'">
+        <app-driver-navbar></app-driver-navbar>
+      </ng-container>
+      <ng-container *ngIf="userRole === 'ADMIN'">
+        <app-admin-navbar></app-admin-navbar>
+      </ng-container>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="content flex-grow-1 p-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

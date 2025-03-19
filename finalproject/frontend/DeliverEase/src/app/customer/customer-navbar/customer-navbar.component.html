@@ -1,0 +1,112 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    body {
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #343a40;
+        padding-top: 20px;
+        color: white;
+    }
+
+    .sidebar-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .nav-link {
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background 0.3s;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Content Styling */
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+        flex: 1;
+        width: calc(100% - 250px);
+    }
+  </style>
+</head>
+
+<body>
+  <nav *ngIf="isLoggedIn" class="sidebar">
+    <div class="sidebar-title">
+      <h2>DELHIVERY</h2>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/customer-home">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/customer/place-order">
+          <i class="fas fa-box"></i> Place Order
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/customer-trackorder">
+          <i class="fas fa-truck"></i> Track Order
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/previousorders">
+          <i class="fas fa-history"></i> Previous Orders
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/feedback">
+          <i class="fas fa-comments"></i> Feedback & Support
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" >
+          <i class="fas fa-user-cog"></i> Profile & Settings
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app/help">
+          <i class="fas fa-question-circle"></i> Help & FAQs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content p-4">
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

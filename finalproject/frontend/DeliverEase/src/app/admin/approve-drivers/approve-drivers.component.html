@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Approve Drivers</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Driver Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Vehicle</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of drivers">
+        <td>{{ driver.firstName }} {{ driver.lastName }}</td>
+        <td>{{ driver.email }}</td>
+        <td>{{ driver.phone }}</td>
+        <td>{{ driver.vehicleType }} - {{ driver.vehicleNumber }}</td>
+        <td>{{ driver.status }}</td>
+        <td>
+          <button *ngIf="driver.status === 'Pending'" (click)="approveDriver(driver.driverId)">
+            Approve
+          </button>
+          <span *ngIf="driver.status === 'Approved'">✔ Approved</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

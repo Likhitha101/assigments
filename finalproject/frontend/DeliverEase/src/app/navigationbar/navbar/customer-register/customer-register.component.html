@@ -1,0 +1,140 @@
+<div class="register-container">
+  <div class="row align-items-center vh-100">
+    <!-- Left Side (Image and Text) -->
+    <div class="col-md-6 d-none d-md-block text-center">
+      <h2 class="fw-bold">Experience the best <br> customer service</h2>
+      <img src="assets/delivery-bg.jpeg" alt="Customer Background" class="img-fluid">
+    </div>
+
+    <!-- Right Side (Form Card) -->
+    <div class="col-md-5">
+      <div class="card shadow-sm p-4">
+        <h3 class="fw-bold text-center">Create Your Account</h3>
+        <form #registerForm="ngForm" (ngSubmit)="register()">
+
+          <!-- First Name -->
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              [(ngModel)]="customerData.firstName"
+              name="firstName"
+              type="text"
+              class="form-control"
+              id="firstName"
+              required
+              #firstName="ngModel"
+            />
+            <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+              Hey, this can't be empty and is required.
+            </div>
+          </div>
+
+          <!-- Last Name -->
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              [(ngModel)]="customerData.lastName"
+              name="lastName"
+              type="text"
+              class="form-control"
+              id="lastName"
+              required
+              #lastName="ngModel"
+            />
+            <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+              Hey, this can't be empty and is required.
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              [(ngModel)]="customerData.email"
+              name="email"
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              email
+              #email="ngModel"
+            />
+            <div *ngIf="email.invalid && email.touched" class="text-danger">
+              Your email is not in the proper format.
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input
+              [(ngModel)]="customerData.phone"
+              name="phone"
+              type="tel"
+              class="form-control"
+              id="phone"
+              required
+              pattern="^[0-9]{10}$"
+              #phone="ngModel"
+            />
+            <div *ngIf="phone.invalid && phone.touched" class="text-danger">
+              Phone number must be exactly 10 digits.
+            </div>
+          </div>
+
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              [(ngModel)]="customerData.username"
+              name="username"
+              type="text"
+              class="form-control"
+              id="username"
+              required
+              #username="ngModel"
+            />
+            <div *ngIf="username.invalid && username.touched" class="text-danger">
+              Username is required.
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              [(ngModel)]="customerData.password"
+              name="password"
+              type="password"
+              class="form-control"
+              id="password"
+              required
+              minlength="8"
+              #password="ngModel"
+            />
+            <div *ngIf="password.invalid && password.touched" class="text-danger">
+              Password must be at least 8 characters long.
+            </div>
+            <small class="text-muted">
+              ✅ 8+ characters | ✅ Upper & lowercase | ✅ Special character | ✅ One number
+            </small>
+          </div>
+
+          <!-- Register Button -->
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="registerForm.invalid"
+          >
+            Create Account
+          </button>
+
+          <!-- Already have an account? -->
+          <div class="text-center mt-3">
+            Already have an account? <a href="/login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<form (ngSubmit)="placeOrder()">
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="orderData.customer.email" name="email" required />
+
+  <label>Pickup Street:</label>
+  <input type="text" [(ngModel)]="orderData.pickupStreet" name="pickupStreet" required />
+
+  <label>Pickup City:</label>
+  <input type="text" [(ngModel)]="orderData.pickupCity" name="pickupCity" required />
+
+  <label>Pickup State:</label>
+  <input type="text" [(ngModel)]="orderData.pickupState" name="pickupState" required />
+
+  <label>Pickup Country:</label>
+  <input type="text" [(ngModel)]="orderData.pickupCountry" name="pickupCountry" required />
+
+  <label>Pickup Pincode:</label>
+  <input type="text" [(ngModel)]="orderData.pickupPincode" name="pickupPincode" required />
+
+  <label>Destination Street:</label>
+  <input type="text" [(ngModel)]="orderData.destinationStreet" name="destinationStreet" required />
+
+  <label>Destination City:</label>
+  <input type="text" [(ngModel)]="orderData.destinationCity" name="destinationCity" required />
+
+  <label>Destination State:</label>
+  <input type="text" [(ngModel)]="orderData.destinationState" name="destinationState" required />
+
+  <label>Destination Country:</label>
+  <input type="text" [(ngModel)]="orderData.destinationCountry" name="destinationCountry" required />
+
+  <label>Destination Pincode:</label>
+  <input type="text" [(ngModel)]="orderData.destinationPincode" name="destinationPincode" required />
+
+  <label>Item Name:</label>
+  <input type="text" [(ngModel)]="orderData.itemName" name="itemName" required />
+
+  <label>Item Weight (kg):</label>
+  <input type="number" [(ngModel)]="orderData.itemWeight" name="itemWeight" required />
+
+  <label>Pickup Date:</label>
+  <input type="date" [(ngModel)]="orderData.pickupDate" name="pickupDate" required />
+
+  <label>Start Time:</label>
+  <input type="time" [(ngModel)]="orderData.startTime" name="startTime" required />
+
+  <label>End Time:</label>
+  <input type="time" [(ngModel)]="orderData.endTime" name="endTime" required />
+
+  <label>Instructions:</label>
+  <textarea [(ngModel)]="orderData.instructions" name="instructions"></textarea>
+
+  <button type="submit">Place Order</button>
+</form>

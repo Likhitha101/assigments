@@ -1,0 +1,25 @@
+.register-container {
+    background:  no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .card {
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+  }
+  
+  /* Move card slightly left */
+  @media (min-width: 768px) {
+    .col-md-5 {
+      margin-left: -30px;
+    }
+  }
+  
+  /* Ensure spacing from navbar */
+  .vh-100 {
+    padding-top: 50px;
+  }
+  

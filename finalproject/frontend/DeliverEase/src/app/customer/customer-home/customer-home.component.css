@@ -1,0 +1,26 @@
+/* Container & layout */
+.container-fluid {
+    background-color: #f8f9fa;
+  }
+  
+  /* Profile Picture */
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  /* Map Placeholder Styling */
+  .map-placeholder {
+    height: 200px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  
+  /* Quick Links */
+  .quick-links a {
+    margin-right: 10px;
+  }
+  

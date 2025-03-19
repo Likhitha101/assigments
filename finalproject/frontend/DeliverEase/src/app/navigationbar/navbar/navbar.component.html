@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div  class="container-fluid">
+    <!-- Logo & Branding -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <img src="assets/logo.png" alt="DeliverEase Logo" class="logo-img">
+      <span class="ms-2 logo-text">DeliverEase</span>
+    </a>
+
+    <!-- Hamburger Menu Button (for Mobile) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Always visible links -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+
+        <!-- When not logged in, show Register & Login -->
+        <ng-container >
+          <li class="nav-item dropdown register-dropdown">
+            <a class="nav-link dropdown-toggle" id="registerDropdown" role="button" data-bs-toggle="dropdown">
+              Register
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/customer-register">Customer</a></li>
+              <li><a class="dropdown-item" routerLink="/driver-register">Driver</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary px-4 py-2 login-btn" routerLink="/login">Login</a>
+          </li>
+        </ng-container>
+
+        <!-- When logged in, show Dashboard link based on role and Logout -->
+        <ng-container >
+          <li class="nav-item" *ngIf="isCustomer">
+            <a class="nav-link" routerLink="/customer-dashboard">Customer Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="isDriver">
+            <a class="nav-link" routerLink="/driver-dashboard">Driver Dashboard</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin">
+            <a class="nav-link" routerLink="/admin-dashboard">Admin Dashboard</a>
+          </li>
+          <li class="nav-item">
+            
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</nav>

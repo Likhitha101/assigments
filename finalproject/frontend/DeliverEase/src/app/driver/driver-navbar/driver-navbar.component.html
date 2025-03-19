@@ -1,0 +1,204 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Sidebar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+      /* General Reset */
+      body {
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        width: 250px; /* Fixed width */
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #343a40;
+        padding-top: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar-title {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      /* Navigation Links */
+      .nav {
+        flex-grow: 1;
+        padding: 0;
+      }
+
+      .nav-item {
+        list-style: none;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out;
+      }
+
+      .nav-link i {
+        font-size: 20px;
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffc107; /* Highlight color */
+      }
+
+      /* Logout Button */
+      .nav-link:last-child {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* Main Content */
+      .content {
+        margin-left: 250px; /* Adjust based on sidebar width */
+        padding: 20px;
+        flex: 1;
+        width: calc(100% - 250px); /* Responsive width */
+      }
+
+      /* Top Right Controls */
+      .top-right-controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .top-right-controls i {
+        font-size: 24px;
+        cursor: pointer;
+        color: #343a40;
+      }
+
+      .top-right-controls i:hover {
+        color: #007bff;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 200px;
+        }
+        .content {
+          margin-left: 200px;
+          width: calc(100% - 200px);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
+        }
+        .content {
+          margin-left: 0;
+          width: 100%;
+        }
+        .nav {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Top Right Controls (Profile, Notification Bell, Availability Toggle) -->
+    <div class="top-right-controls">
+      <!-- Profile Icon -->
+      <i class="fas fa-user-cog" (click)="goToProfile()"></i>
+
+      <!-- Notification Bell -->
+      <i class="fas fa-bell" (click)="openNotifications()"></i>
+
+      <!-- Availability Toggle Button -->
+      <button class="availability-toggle" [ngClass]="availabilityStatus ? 'available' : 'unavailable'" (click)="toggleAvailability()">
+        {{ availabilityStatus ? 'Available' : 'Unavailable' }}
+      </button>
+    </div>
+
+    <!-- Driver Sidebar -->
+    <nav *ngIf="isLoggedIn" class="sidebar">
+      <div class="sidebar-title">
+        <h2>DELIVEREASE</h2>
+      </div>
+      <ul class="nav flex-column">
+        <!-- Scheduled Deliveries -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/app/driver-order">
+            <i class="fas fa-box"></i> Scheduled Deliveries
+          </a>
+        </li>
+        <!-- Update Order Status -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver/update-status">
+            <i class="fas fa-pencil-alt"></i> Update Order Status
+          </a>
+        </li>
+        <!-- Report Issue -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver/report-issue">
+            <i class="fas fa-exclamation-circle"></i> Report Issue
+          </a>
+        </li>
+        <!-- Delivery History -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver/delivery-history">
+            <i class="fas fa-clock"></i> Delivery History
+          </a>
+        </li>
+        <!-- Support & Help -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver/support">
+            <i class="fas fa-question-circle"></i> Support & Help
+          </a>
+        </li>
+        <!-- Profile & Settings -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver/profile">
+            <i class="fas fa-user-cog"></i> Profile & Settings
+          </a>
+        </li>
+        <!-- Logout -->
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="content p-4">
+      <!-- Content will be rendered here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

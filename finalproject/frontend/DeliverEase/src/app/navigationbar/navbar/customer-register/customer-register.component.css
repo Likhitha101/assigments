@@ -1,0 +1,16 @@
+.register-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+h2 {
+  color: #007bff;
+}
+
+.btn {
+  width: auto;
+}

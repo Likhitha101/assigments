@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sidebar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px; /* Fixed width */
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding-top: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Links */
+        .nav {
+            flex-grow: 1;
+            padding: 0;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .nav-link i {
+            font-size: 20px;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffc107; /* Highlight color */
+        }
+
+        /* Logout Button */
+        .nav-link:last-child {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 250px; /* Adjust based on sidebar width */
+            padding: 20px;
+            flex: 1;
+            width: calc(100% - 250px); /* Responsive width */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="sidebar-title">Admin Dashboard</h4>
+        <ul class="nav flex-column">
+            <!-- Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <!-- Order Management -->
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/app/order">
+                    <i class="fas fa-box"></i> Manage Orders
+                </a>
+            </li>
+            <!-- Driver Management -->
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/app/approve-drivers">
+                    <i class="fas fa-car"></i> Manage Drivers
+                </a>
+            </li>
+            <!-- Customer Management -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-user"></i> Manage Customers
+                </a>
+            </li>
+            <!-- Delivery Tracking -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-truck"></i> Track Deliveries
+                </a>
+            </li>
+            <!-- Incident Management -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-exclamation-circle"></i> Incident Management
+                </a>
+            </li>
+            <!-- Reports and Analytics -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-chart-pie"></i> Reports & Analytics
+                </a>
+            </li>
+            <!-- User Management -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-lock"></i>Review Feedbacks
+                </a>
+            </li>
+           
+            <!-- Logout -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>This is where you can manage the delivery operations, drivers, customers, and more.</p>
+    </div>
+
+    <!-- Bootstrap JS & Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

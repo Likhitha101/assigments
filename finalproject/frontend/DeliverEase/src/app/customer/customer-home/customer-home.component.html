@@ -1,0 +1,73 @@
+<div class="container-fluid p-4">
+    <!-- Welcome & Profile Summary Section -->
+    <div class="row align-items-center mb-4">
+      <div class="col-md-3 text-center">
+        <!-- Profile Picture (use an actual image URL or Angular binding) -->
+        <img src="assets/profile-placeholder.png" alt="Profile Picture" class="img-fluid rounded-circle profile-pic">
+      </div>
+      <div class="col-md-9">
+        <h1>Hello, </h1>
+        <p>Membership Level: </p>
+        <div class="quick-links mt-3">
+          <a routerLink="/app/customer/profile" class="btn btn-outline-primary mr-2">Update Profile</a>
+          <a routerLink="/app/customer/addresses" class="btn btn-outline-secondary mr-2">Manage Addresses</a>
+          <a routerLink="/app/customer/settings" class="btn btn-outline-info">Account Settings</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Current Delivery Status Section -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3>Current Delivery Status</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Order ID:</strong><p>
+                <p><strong>Status:</strong></p>
+                <p><strong>Expected Delivery:</strong></p>
+              </div>
+              <div class="col-md-6">
+                <!-- Map/Timeline Placeholder -->
+                <div class="map-placeholder d-flex align-items-center justify-content-center">
+                  <span>Map/Timeline Placeholder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Additional Information: Recent Orders Section -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Orders</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr >
+               
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

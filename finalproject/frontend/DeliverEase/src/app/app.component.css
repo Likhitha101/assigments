@@ -1,0 +1,29 @@
+.scrolling-banner {
+    width: 100%;
+    background-color: #e3f2fd; /* Light Blue Background */
+    color: #0d47a1; /* Dark Blue Text */
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  /* Scrolling Effect */
+  .scrolling-banner p {
+    display: inline-block;
+    animation: scrollText 20s linear infinite;
+  }
+  
+  @keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* Stop scrolling when hovered */
+  .scrolling-banner:hover p {
+    animation-play-state: paused;
+  }
+  
